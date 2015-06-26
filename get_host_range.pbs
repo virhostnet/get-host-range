@@ -1,0 +1,8 @@
+#PBS -S /bin/bash
+#PBS -N ghr
+#PBS -q q1hour
+#PBS -e /pandata/navratil/data/biomedomix/tmp/ghr_${PBS_JOBID}.err
+#PBS -o /pandata/navratil/data/biomedomix/tmp/ghr_${PBS_JOBID}.ou
+
+file=`basename $path`
+python /panhome/navratil/projects/git/get-host-range/gb2hr.py $path > /pandata/navratil/data/biomedomix/tmp/$file.gb2hr
